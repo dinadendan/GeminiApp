@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gemini_app/core/helper/extensions.dart';
+import 'package:gemini_app/core/routing/routes.dart';
 
 class HomeScreen extends StatelessWidget{
   const HomeScreen({super.key});
@@ -16,7 +19,7 @@ class HomeScreen extends StatelessWidget{
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 120,horizontal: 15),
+          padding: EdgeInsets.symmetric(vertical: 120.h,horizontal: 15.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -30,10 +33,15 @@ class HomeScreen extends StatelessWidget{
               const SizedBox(
                 height: 40,
               ),
-              ElevatedButton(
-                  onPressed: (){
-                  },
-                  child: const Text('Start a Chat ')
+              SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                    onPressed: (){
+                      context.pushNamed(Routes.chatScreen);
+                    },
+                    child: const Text('Start a Chat '),
+
+                ),
               ),
 
             ],

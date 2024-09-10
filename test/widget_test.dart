@@ -8,13 +8,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gemini_app/core/routing/app_router.dart';
+import 'package:gemini_app/gemini_app.dart';
 
 import 'package:gemini_app/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp(
+    await tester.pumpWidget(GeminiApp(
       appRouter: AppRouter(),
 
     ));

@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gemini_app/core/routing/app_router.dart';
-import 'package:gemini_app/core/routing/routes.dart';
+import 'package:gemini_app/gemini_app.dart';
 
-void main() {
-  runApp( MyApp(
+void main() async{
+
+  await ScreenUtil.ensureScreenSize();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.white,
+      // statusBarIconBrightness: Brightness.dark,
+      // statusBarBrightness: Brightness.dark,
+      // systemNavigationBarDividerColor: Colors.grey,
+      // systemNavigationBarIconBrightness: Brightness.dark,
+    ),
+  );
+
+
+  runApp(GeminiApp(
     appRouter: AppRouter(),
   ));
 }
 
-class MyApp extends StatelessWidget {
-  final AppRouter appRouter;
-
-  const MyApp({super.key, required this.appRouter});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.dark,
-          seedColor: const Color.fromARGB(255, 171, 222, 244),
-        ),
-        useMaterial3: true,
-      ),
-        initialRoute: Routes.homeScreen,
-        onGenerateRoute: appRouter.generateRoute
-      // home: const HomeScreen(),
-    );
-  }
-}
 

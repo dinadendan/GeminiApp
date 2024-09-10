@@ -20,13 +20,14 @@ class _ChatScreenState extends State<ChatScreen> {
   bool loading = false;
 
   @override
-  void initState(){
-    super.initState();
-    model=GenerativeModel(model: 'gemini-pro',
-        apiKey: 'AIzaSyBduVgZNaUYhSJPBCuY5dX6eEKX8wmNrU0',
-    );
-    chatSession = model.startChat();
-  }
+  // void initState(){
+  //   super.initState();
+  //   model=GenerativeModel(
+  //     model: 'gemini-pro',
+  //     apiKey: 'AIzaSyBduVgZNaUYhSJPBCuY5dX6eEKX8wmNrU0',
+  //   );
+  //   chatSession = model.startChat();
+  // }
 
   void scrollDown() {
     WidgetsBinding.instance.addPostFrameCallback((_) => scrollController.animateTo(

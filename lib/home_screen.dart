@@ -31,7 +31,8 @@ class HomeScreen extends StatelessWidget{
                 height: 40,
               ),
               ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                  },
                   child: const Text('Start a Chat ')
               ),
 

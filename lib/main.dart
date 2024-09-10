@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:gemini_app/features/chat/chat_screen.dart';
-import 'package:gemini_app/home_screen.dart';
+import 'package:gemini_app/core/routing/app_router.dart';
+import 'package:gemini_app/core/routing/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp(
+    appRouter: AppRouter(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AppRouter appRouter;
+
+  const MyApp({super.key, required this.appRouter});
 
   // This widget is the root of your application.
   @override
@@ -21,7 +25,9 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+        initialRoute: Routes.homeScreen,
+        onGenerateRoute: appRouter.generateRoute
+      // home: const HomeScreen(),
     );
   }
 }

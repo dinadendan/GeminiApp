@@ -13,13 +13,10 @@ class AppRouter {
           builder: (_) => const HomeScreen(),
         );
 
-
       case Routes.chatScreen:
         return MaterialPageRoute(
           builder: (_) => const ChatScreen(),
         );
-
-
 
       default:
         return null;

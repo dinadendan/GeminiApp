@@ -1,40 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageWidget extends StatelessWidget {
   const MessageWidget({
     super.key,
-    required this.text,
+    required this.message,
     required this.isFromUser,
   });
 
-  final String text;
+  final String message;
   final bool isFromUser;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment:
-      isFromUser ? MainAxisAlignment.end : MainAxisAlignment.start,
-      children: [
-        Flexible(
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 4.h),
+      child: Align(
+        alignment:
+        isFromUser ? Alignment.centerRight : Alignment.centerLeft,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 0.75.sw,
+          ),
           child: Container(
-            constraints: const BoxConstraints(maxWidth: 480),
             decoration: BoxDecoration(
               color: isFromUser
-                  ? Theme.of(context).colorScheme.primaryContainer
-                  : Theme.of(context).colorScheme.background,
-              borderRadius: BorderRadius.circular(18),
+                  ? const Color(0xFF4F8EE5)
+                  : const Color(0xFF3D3D3D),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(18.r),
+                topRight: Radius.circular(18.r),
+                bottomLeft: isFromUser
+                    ? Radius.circular(18.r)
+                    : const Radius.circular(0),
+                bottomRight: isFromUser
+                    ? const Radius.circular(0)
+                    : Radius.circular(18.r),
+              ),
             ),
-            padding: const EdgeInsets.symmetric(
-              vertical: 15,
-              horizontal: 20,
+            padding: EdgeInsets.all(12.h),
+            child: Text(
+              message,
             ),
-            margin: const EdgeInsets.only(bottom: 5),
-            child: MarkdownBody(data: text),
           ),
         ),
-      ],
+      ),
     );
   }
 }

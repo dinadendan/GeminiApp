@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemini_app/core/routing/routes.dart';
 import 'package:gemini_app/features/chat/chat_screen.dart';
-import 'package:gemini_app/home_screen.dart';
+import 'package:gemini_app/features/home/ui/home_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {

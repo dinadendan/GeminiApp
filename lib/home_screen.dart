@@ -51,10 +51,8 @@ class HomeScreen extends StatelessWidget{
                 height: 25.h,
               ),
               Center(
-                child: Expanded(
-                  child: Image.asset('assets/images/bot2.png',
-                  scale: 2,
-                  ),
+                child: Image.asset('assets/images/bot2.png',
+                scale: 2,
                 ),
               ),
             ],

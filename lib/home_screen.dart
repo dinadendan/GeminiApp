@@ -10,40 +10,53 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Gemini App'),
-        titleTextStyle: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
+        title: Image.asset('assets/images/logo.png',
+          scale: 2,
         ),
         centerTitle: true,
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 120.h,horizontal: 15.w),
+          padding: EdgeInsets.only(top: 120.h,left: 15.w,right: 15.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Hello,\nHow can i help you today ?',
               style: TextStyle(
-                fontSize: 26,
+                fontSize: 26.sp,
                 fontWeight: FontWeight.w700
               ),
               ),
-              const SizedBox(
-                height: 40,
+              SizedBox(
+                height: 40.h,
               ),
               SizedBox(
-                width: 200,
+                width: 200.w,
+                height: 45.h,
                 child: ElevatedButton(
                     onPressed: (){
                       context.pushNamed(Routes.chatScreen);
                     },
-                    child: const Text('Start a Chat '),
+                    child: Text('Start a Chat ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.sp
+                    ),),
+
 
                 ),
               ),
-
+              SizedBox(
+                height: 25.h,
+              ),
+              Center(
+                child: Expanded(
+                  child: Image.asset('assets/images/bot2.png',
+                  scale: 2,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

@@ -18,7 +18,10 @@ The **Gemini App** is a cutting-edge mobile application built with Flutter and D
 
 
 ## - Demo Video  📱 : 
-<img src="https://github.com/dinadendan/GeminiApp/blob/main/assets/images/demo.gif" alt="Gemini app Demo" width="700"/>
+
+
+https://github.com/user-attachments/assets/7f995342-4600-4373-bd9f-040e4fbd7867
+
 
 
 ## - Building Gemini App Android version :
